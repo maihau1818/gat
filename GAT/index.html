@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Global Anti Toxic</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1 class="app-title">🌐 Global Anti Toxic</h1>
+    <div class="logo-block">
+      <img src="https://i.postimg.cc/FRSk69Fb/z6707824702268-affa420a11531597a64b0b1b4a471a3e-2.jpg" alt="Logo" class="logo" />
+      <span class="logo-text">G.A.T</span>
+    </div>
+  </header>
+
+  <div class="top-bar">
+    <select id="langSelector" onchange="changeLang()">
+      <option value="vi">Tiếng Việt</option>
+      <option value="en">English</option>
+    </select>
+    <button onclick="toggleInbox()" id="inboxBtn" style="display:none;">📨 <span id="inboxLabel">Hộp thư</span></button>
+    <button id="logoutBtn" onclick="logout()">🔒 <span id="logoutLabel">Đăng xuất</span></button>
+  </div>
+
+  <div id="inboxContainer" class="card inbox-panel" style="display:none;">
+    <h3>📬 <span id="inboxTitle">Hộp thư người chơi</span></h3>
+    <div id="inboxList" class="inbox-list"></div>
+    <div id="chatDetail" class="chat-detail" style="display:none;">
+      <h4 id="chatPlayerName"></h4>
+      <div id="chatMessages" class="chat-messages"></div>
+      <input id="adminReply" type="text" placeholder="Nhập phản hồi..." />
+      <button onclick="sendReply()">Gửi</button>
+    </div>
+    <button onclick="toggleInbox()" class="close-inbox">❌ Đóng hộp thư</button>
+  </div>
+
+  <div id="loginContainer" class="card center-card">
+    <h2>🔐 Đăng nhập Admin</h2>
+    <input type="text" id="username" placeholder="Tài khoản máy chủ" />
+    <input type="password" id="password" placeholder="Mật khẩu" />
+    <button onclick="login()">Đăng nhập</button>
+  </div>
+
+  <div id="mainContent" style="display: none;">
+    <div class="card">
+      <h2 id="title">🧠 Bảng điều khiển giám sát Toxic</h2>
+    </div>
+
+    <div class="card">
+      <h3 id="chatTitle">💬 Lọc chat độc hại</h3>
+      <div id="chatOutput">Đang chờ mô phỏng...</div>
+      <div><strong id="toxicLabel">Tin nhắn độc hại:</strong> <span id="toxicCount">0</span></div>
+    </div>
+
+    <div class="card">
+      <h3 id="voiceTitle">🎤 Phân tích voice chat</h3>
+      <div id="voiceOutput">Đang chờ mô phỏng...</div>
+      <div><strong id="voiceLabel">Voice cảnh báo:</strong> <span id="voiceCount">0</span></div>
+    </div>
+
+    <div class="card">
+      <h3 id="behaviorTitle">🧠 Phân tích hành vi</h3>
+      <div id="behaviorResult">Đang chờ mô phỏng...</div>
+      <div><strong id="behaviorLabel">Hành vi nghi vấn:</strong> <span id="behaviorCount">0</span></div>
+    </div>
+
+    <div class="card penalty">
+      <h3 id="penaltyTitle">🛑 Cảnh cáo & hình phạt</h3>
+      <input type="text" id="searchName" placeholder="Nhập tên người chơi..." oninput="searchPlayer()" />
+      <input type="number" id="banDuration" placeholder="Thời gian cấm (giây)" />
+      <button onclick="banPlayer()">🚫 Cấm</button>
+      <button onclick="unbanPlayer()">✅ Gỡ cấm</button>
+      <div id="playerStatus" class="status-text"></div>
+
+      <h4 id="bannedListTitle">📋 Danh sách bị cấm:</h4>
+      <ul id="bannedList"></ul>
+
+      <h4 id="penaltyLogTitle">📜 Nhật ký hình phạt:</h4>
+      <div id="penaltyLog"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

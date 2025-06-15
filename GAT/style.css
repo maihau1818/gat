@@ -1,0 +1,187 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #0e1c30;
+  color: white;
+  margin: 0;
+  padding: 10px;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #142744;
+  padding: 12px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+  margin-bottom: 15px;
+}
+
+.app-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #4ecdc4;
+}
+
+.logo-block {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+}
+
+.logo-text {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffffcc;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 15px;
+  gap: 10px;
+}
+
+select, input, button {
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  font-size: 14px;
+}
+
+select {
+  background: #2e3f5c;
+  color: white;
+}
+
+input {
+  width: calc(100% - 22px);
+  margin-top: 10px;
+}
+
+button {
+  background-color: #4ecdc4;
+  color: black;
+  cursor: pointer;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.card {
+  background-color: #1f3354;
+  padding: 20px;
+  margin-bottom: 15px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.center-card {
+  max-width: 400px;
+  margin: auto;
+  margin-top: 40px;
+}
+
+#penaltyLog {
+  max-height: 200px;
+  overflow-y: auto;
+  margin-top: 10px;
+  background: #253d5b;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.penalty-log-entry {
+  padding: 8px;
+  margin-bottom: 8px;
+  border-left: 4px solid;
+  background-color: rgba(255,255,255,0.05);
+  border-radius: 8px;
+  line-height: 1.4;
+}
+
+.penalty-chat { border-color: #e74c3c; }
+.penalty-voice { border-color: #9b59b6; }
+.penalty-behavior { border-color: #3498db; }
+
+.status-text {
+  margin-top: 8px;
+  font-weight: bold;
+}
+
+.inbox-panel {
+  max-width: 400px;
+  position: fixed;
+  right: 20px;
+  top: 90px;
+  z-index: 999;
+}
+
+.inbox-list {
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #4ecdc4;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.inbox-list div {
+  cursor: pointer;
+  margin-bottom: 8px;
+  padding: 8px;
+  background: #2c3e50;
+  border-radius: 10px;
+}
+
+.chat-detail {
+  background: #20354c;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.chat-messages {
+  max-height: 150px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+
+#logoutBtn, #inboxBtn {
+  min-width: 100px;
+  display: none;
+}
+
+#bannedList {
+  max-height: 150px;
+  overflow-y: auto;
+  padding-left: 20px;
+  margin-top: 10px;
+  border: 1px solid #4ecdc4;
+  border-radius: 10px;
+  background: #253d5b;
+}
+
+#loginContainer button {
+  width: 100%;
+  max-width: 200px;
+  margin: 10px auto 0;
+  display: block;
+}
+
+/* ✅ Thêm nút đóng hộp thư */
+.close-inbox {
+  background-color: #e74c3c;
+  color: white;
+  margin-top: 10px;
+  width: 100%;
+}
+iframe[src*="tiiny.host"],
+div[style*="z-index:999999"] {
+  display: none !important;
+}
